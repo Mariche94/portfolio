@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariché García | Diseño, Producto, IA y Automatización</title>
+  <meta
+    name="description"
+    content="Portfolio y CV de Mariché García. Diseño, producto, IA y automatización para crear experiencias, procesos y productos con impacto real."
+  />
+  <style>
+    :root {
+      --bg: #f7f2ec;
+      --bg-soft: #fbf7f2;
+      --text: #181818;
+      --muted: #5f5a55;
+      --line: #e7ddd3;
+      --card: rgba(255, 255, 255, 0.72);
+      --dark: #111111;
+      --dark-soft: #181818;
+      --accent: #eb7d2f;
+      --accent-2: #f2a15f;
+      --white: #ffffff;
+      --max: 1180px;
+      --radius: 24px;
+      --shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(235, 125, 47, 0.20), transparent 24%),
+        radial-gradient(circle at 95% 65%, rgba(235, 125, 47, 0.12), transparent 22%),
+        linear-gradient(180deg, #fbf8f4 0%, #f6efe8 100%);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.95rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #000;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,0.5);
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      background: #d86f24;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(251, 248, 244, 0.82);
+      border-bottom: 1px solid rgba(231, 221, 211, 0.7);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand .dot {
+      color: var(--accent);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .menu a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 4rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-topline {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 5vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+    }
+
+    .h1-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .hero p.lead {
+      max-width: 640px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .portrait {
+      width: min(172%, 720px);
+      max-width: none;
+      height: auto;
+      margin-left: -7rem;
+    }
+
+    .quote-card {
+      position: absolute;
+      right: 0;
+      bottom: 3.6rem;
+      max-width: 320px;
+      background: rgba(255,255,255,0.76);
+      backdrop-filter: blur(12px);
+      padding: 1.6rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    .quote-card .mark {
+      color: var(--accent);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .quote-card p {
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .quote-card span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .quote-card cite {
+      display: block;
+      color: var(--muted);
+      font-style: normal;
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: rgba(255,255,255,0.4);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .feature {
+      padding: 1.5rem;
+      border-right: 1px solid var(--line);
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .feature-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feature-icon-image {
+      display: block;
+      background: currentColor;
+      mask: url("handshake-icon.png") center / contain no-repeat;
+      -webkit-mask: url("handshake-icon.png") center / contain no-repeat;
+    }
+
+    .feature h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .dark-section {
+      background:
+        radial-gradient(circle at 15% 100%, rgba(235, 125, 47, 0.08), transparent 28%),
+        linear-gradient(180deg, #131313 0%, #0e0e0e 100%);
+      color: var(--white);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .experience-copy h2,
+    .companies-copy h2,
+    .projects-copy h2,
+    .contact-copy h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-copy p,
+    .contact-copy p {
+      color: rgba(255,255,255,0.72);
+      max-width: 430px;
+      margin-bottom: 2rem;
+    }
+
+    .companies-section {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(251,247,242,0.68) 100%);
+      overflow: hidden;
+    }
+
+    .companies-head {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2.5rem;
+    }
+
+    .companies-copy p {
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 1.05rem;
+    }
+
+    .logo-marquee {
+      position: relative;
+      overflow: hidden;
+      padding: 0.5rem 0;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    .logo-track {
+      display: flex;
+      width: max-content;
+      animation: logo-scroll 58s linear infinite;
+      will-change: transform;
+    }
+
+    .logo-set {
+      display: flex;
+      gap: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .company-logo {
+      flex: 0 0 auto;
+      width: 196px;
+      height: 104px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+    }
+
+    .company-logo img {
+      width: 100%;
+      height: 100%;
+      max-width: 168px;
+      max-height: 78px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.08));
+    }
+
+    .company-logo.logo-wide {
+      width: 230px;
+    }
+
+    .company-logo.logo-wide img {
+      max-width: 218px;
+      max-height: 72px;
+    }
+
+    .company-logo.logo-extra-wide {
+      width: 270px;
+    }
+
+    .company-logo.logo-extra-wide img {
+      max-width: 258px;
+      max-height: 74px;
+    }
+
+    .company-logo.logo-symbol {
+      width: 140px;
+    }
+
+    .company-logo.logo-symbol img {
+      max-width: 92px;
+      max-height: 88px;
+    }
+
+    .company-logo.logo-crest {
+      width: 142px;
+    }
+
+    .company-logo.logo-crest img {
+      max-width: 90px;
+      max-height: 90px;
+    }
+
+    .company-logo.logo-crest-wide {
+      width: 158px;
+    }
+
+    .company-logo.logo-crest-wide img {
+      max-width: 112px;
+      max-height: 92px;
+    }
+
+    @keyframes logo-scroll {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stat {
+      padding: 2rem;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      min-height: 180px;
+    }
+
+    .stat:nth-child(3n) {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: 3rem;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .stat p,
+    .stat ul {
+      color: rgba(255,255,255,0.76);
+      font-size: 0.98rem;
+    }
+
+    .stat ul {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .projects-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .projects-link {
+      justify-self: start;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-media {
+      aspect-ratio: 16 / 9;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 600;
+      overflow: hidden;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .card-body {
+      padding: 1rem 1rem 1.25rem;
+    }
+
+    .card-index {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.77rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .tools {
+      padding-top: 2rem;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .tool-card {
+      min-height: 110px;
+      perspective: 900px;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .tool-card:focus-visible {
+      outline: 3px solid rgba(235, 125, 47, 0.35);
+      outline-offset: 4px;
+    }
+
+    .tool-inner {
+      position: relative;
+      width: 100%;
+      min-height: 110px;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+    }
+
+    .tool-card:hover .tool-inner,
+    .tool-card:focus .tool-inner {
+      transform: rotateY(180deg);
+    }
+
+    .tool-face {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      min-height: 110px;
+      border-radius: 8px;
+      backface-visibility: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+
+    .tool-front {
+      background: rgba(255,255,255,0.66);
+      color: var(--text);
+    }
+
+    .tool-back {
+      background: var(--accent);
+      color: var(--white);
+      transform: rotateY(180deg);
+      font-size: clamp(1rem, 1.9vw, 1.35rem);
+      font-weight: 800;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .tool-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #181818;
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .tool-icon svg {
+      width: 31px;
+      height: 31px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .tool-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .tool-logo.wide {
+      width: 86px;
+    }
+
+    .tool-icon.photoshop {
+      background: #001e36;
+      color: #31a8ff;
+    }
+
+    .tool-icon.illustrator {
+      background: #330000;
+      color: #ff9a00;
+    }
+
+    .tool-icon.indesign {
+      background: #49021f;
+      color: #ff3366;
+    }
+
+    .tool-icon.chatgpt {
+      background: #10a37f;
+      color: var(--white);
+    }
+
+    .tool-icon.claude {
+      background: #d97745;
+      color: #fff7ed;
+    }
+
+    .tool-icon.notion {
+      background: var(--white);
+      color: var(--text);
+      border: 1px solid #d8d0c8;
+    }
+
+    .tool-icon.codex {
+      background: #111111;
+      color: #f2a15f;
+    }
+
+    .tool-icon.canva {
+      background: linear-gradient(135deg, #00c4cc, #7d2ae8);
+      color: var(--white);
+      font-family: Georgia, serif;
+      font-style: italic;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tool-inner {
+        transition: none;
+      }
+
+      .logo-track {
+        animation: none;
+      }
+
+      .logo-marquee {
+        overflow-x: auto;
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-card {
+      border-left: 1px solid rgba(255,255,255,0.14);
+      padding-left: 2rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .contact-list strong {
+      color: var(--white);
+    }
+
+    .footer {
+      padding: 1.5rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .experience-grid,
+      .companies-head,
+      .projects-head,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature:nth-child(2) {
+        border-right: none;
+      }
+
+      .feature:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .tool-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .hero-visual {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .portrait {
+        width: min(100%, 560px);
+        margin-left: 0;
+      }
+
+      .quote-card {
+        position: static;
+        margin-top: 0;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.85rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .h1-line {
+        white-space: normal;
+      }
+
+      .features,
+      .projects-grid,
+      .tool-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .feature,
+      .stat {
+        border-right: none !important;
+      }
+
+      .feature:not(:last-child),
+      .stat {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .tool-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .logo-set {
+        gap: 0.85rem;
+        padding-right: 0.85rem;
+      }
+
+      .company-logo {
+        width: 158px;
+        height: 82px;
+        padding: 0 0.6rem;
+      }
+
+      .company-logo img {
+        max-width: 142px;
+        max-height: 62px;
+      }
+
+      .company-logo.logo-wide {
+        width: 184px;
+      }
+
+      .company-logo.logo-wide img {
+        max-width: 174px;
+        max-height: 60px;
+      }
+
+      .company-logo.logo-extra-wide {
+        width: 210px;
+      }
+
+      .company-logo.logo-extra-wide img {
+        max-width: 200px;
+        max-height: 60px;
+      }
+
+      .company-logo.logo-symbol,
+      .company-logo.logo-crest {
+        width: 112px;
+      }
+
+      .company-logo.logo-symbol img,
+      .company-logo.logo-crest img {
+        max-width: 74px;
+        max-height: 72px;
+      }
+
+      .company-logo.logo-crest-wide {
+        width: 128px;
+      }
+
+      .company-logo.logo-crest-wide img {
+        max-width: 92px;
+        max-height: 74px;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .portrait {
+        width: min(100%, 460px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand">mariché garcía<span class="dot">.</span></a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#empresas">Empresas</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary" href="#contacto">Hablemos</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-topline">Diseño - Producto - IA - Automatización</div>
+
+            <h1>
+              <span class="h1-line">Diseño <span class="accent">experiencias.</span></span>
+              <span class="h1-line">Automatizo procesos.</span>
+              <span class="h1-line">Optimizo tu <span class="accent">tiempo.</span></span>
+            </h1>
+
+            <p class="lead">
+              Combino creatividad, tecnología e inteligencia artificial para crear
+              productos, experiencias y procesos que generan impacto real en las personas
+              y en el negocio.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#proyectos">Ver mi trabajo</a>
+              <a class="btn btn-secondary" href="cv.pdf" download>Descargar CV</a>
+              <a class="btn btn-accent" href="https://wa.me/34679645956" target="_blank" rel="noopener noreferrer">Contactar</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              class="portrait"
+              src="retrato-mariche-transparente.png"
+              alt="Retrato de Mariché García"
+              width="800"
+              height="800"
+            />
+
+            <aside class="quote-card">
+              <div class="mark">“</div>
+              <p>
+                El arte desafía a la tecnología y la tecnología inspira al arte.
+              </p>
+              <cite>— John Lasseter</cite>
+            </aside>
+          </div>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+                <circle cx="12" cy="12" r="5.5"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M12 1.8v3"></path>
+                <path d="M12 19.2v3"></path>
+                <path d="M1.8 12h3"></path>
+                <path d="M19.2 12h3"></path>
+              </svg>
+            </div>
+            <h3>Mentalidad de producto</h3>
+            <p>Entiendo el problema, pienso en el usuario y diseño la solución.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v5"></path>
+                <path d="M12 17v5"></path>
+                <path d="M4.9 4.9l3.5 3.5"></path>
+                <path d="M15.6 15.6l3.5 3.5"></path>
+                <path d="M2 12h5"></path>
+                <path d="M17 12h5"></path>
+                <path d="M4.9 19.1l3.5-3.5"></path>
+                <path d="M15.6 8.4l3.5-3.5"></path>
+                <circle cx="12" cy="12" r="2.8"></circle>
+              </svg>
+            </div>
+            <h3>IA como aliada</h3>
+            <p>Integro IA para acelerar procesos, investigar, idear y optimizar.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon feature-icon-image" aria-hidden="true"></div>
+            <h3>Puente entre mundos</h3>
+            <p>Diseño, tecnología y negocio. Hablo el idioma de cada equipo y los conecto.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19h16"></path>
+                <path d="M5 16l4.2-4.2 3 3L19 8"></path>
+                <path d="M15 8h4v4"></path>
+                <path d="M6 19v-3"></path>
+                <path d="M11 19v-5"></path>
+                <path d="M16 19v-8"></path>
+              </svg>
+            </div>
+            <h3>Resultados con sentido</h3>
+            <p>No es solo que se vea bien, es que funciona, comunica y deja huella.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="experiencia">
+      <div class="container">
+        <div class="experience-grid">
+          <div class="experience-copy">
+            <span class="eyebrow">Experiencia</span>
+            <h2>Convierto ideas complejas en soluciones simples y escalables.</h2>
+            <p>
+              Algunos de los resultados que he impulsado a través de diseño,
+              estrategia, automatización y colaboración transversal.
+            </p>
+            <a class="btn btn-secondary" href="#contacto">Ver experiencia completa</a>
+          </div>
+
+          <div class="stats">
+            <article class="stat">
+              <strong>+150</strong>
+              <p>Catálogos diseñados a medida para grandes marcas conocidas.</p>
+            </article>
+
+            <article class="stat">
+              <strong>+250</strong>
+              <p>Proveedores gestionados en Asia para desarrollo y fabricación.</p>
+            </article>
+
+            <article class="stat">
+              <strong>-40%</strong>
+              <p>Tiempo invertido en tareas repetitivas gracias al uso de la IA.</p>
+            </article>
+
+            <article class="stat">
+              <strong>∞</strong>
+              <p>Ideas transformadas en productos, campañas y experiencias. 100% ad-hoc por cliente.</p>
+            </article>
+
+            <article class="stat">
+              <strong>+200</strong>
+              <p>Productos diseñados y creados desde cero según necesidades del cliente.</p>
+            </article>
+
+            <article class="stat">
+              <strong>1</strong>
+              <p>Mentalidad: mejora continua. Nunca dejar de formarse y aprender las nuevas tecnologías.</p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section companies-section" id="empresas" aria-labelledby="empresas-title">
+      <div class="container">
+        <div class="companies-head">
+          <div class="companies-copy">
+            <span class="eyebrow">Empresas</span>
+            <h2 id="empresas-title">Empresas con las que he trabajado.</h2>
+          </div>
+          <div class="companies-copy">
+            <p>
+              Marcas de sectores muy distintos, unidas por proyectos donde el diseño,
+              el producto y la comunicación tenían que funcionar con precisión.
+            </p>
+          </div>
+        </div>
+
+        <div class="logo-marquee" aria-label="Listado de empresas con las que he trabajado">
+          <div class="logo-track">
+            <div class="logo-set">
+              <span class="company-logo logo-symbol">
+                <img src="logos/empresas/mcdonalds.png" alt="McDonald's" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/game.png" alt="GAME" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/cinfa.png" alt="Cinfa" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/unicaja.png" alt="Unicaja" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/vorwerk.png" alt="Vorwerk" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/anaya.png" alt="Anaya" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/balearia.png" alt="Balearia" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/malvon.png" alt="Malvón" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/jo-malone.png" alt="Jo Malone" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/salvesen-logistica.png" alt="Salvesen Logística" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/alimerka.png" alt="Alimerka" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/aire.png" alt="Aire" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/popeyes.png" alt="Popeyes" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/canal-isabel-ii.png" alt="Canal Isabel II" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/el-corte-ingles.png" alt="El Corte Inglés" />
+              </span>
+              <span class="company-logo logo-symbol">
+                <img src="logos/empresas/carrefour.svg" alt="Carrefour" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/k-tuin.png" alt="K-tuin" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/mr-wonderful.svg" alt="Mr. Wonderful" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/real-madrid.png" alt="Real Madrid" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/fc-barcelona.png" alt="FC Barcelona" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/atletico-madrid.png" alt="Atlético de Madrid" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/sevilla-fc.png" alt="Sevilla FC" />
+              </span>
+              <span class="company-logo logo-crest-wide">
+                <img src="logos/empresas/real-betis.png" alt="Real Betis Balompié" />
+              </span>
+            </div>
+
+            <div class="logo-set" aria-hidden="true">
+              <span class="company-logo logo-symbol">
+                <img src="logos/empresas/mcdonalds.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/game.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/cinfa.png" alt="" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/unicaja.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/vorwerk.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/anaya.png" alt="" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/balearia.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/malvon.png" alt="" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/jo-malone.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/salvesen-logistica.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/alimerka.png" alt="" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/aire.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/popeyes.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/canal-isabel-ii.png" alt="" />
+              </span>
+              <span class="company-logo logo-extra-wide">
+                <img src="logos/empresas/el-corte-ingles.png" alt="" />
+              </span>
+              <span class="company-logo logo-symbol">
+                <img src="logos/empresas/carrefour.svg" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/k-tuin.png" alt="" />
+              </span>
+              <span class="company-logo logo-wide">
+                <img src="logos/empresas/mr-wonderful.svg" alt="" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/real-madrid.png" alt="" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/fc-barcelona.png" alt="" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/atletico-madrid.png" alt="" />
+              </span>
+              <span class="company-logo logo-crest">
+                <img src="logos/empresas/sevilla-fc.png" alt="" />
+              </span>
+              <span class="company-logo logo-crest-wide">
+                <img src="logos/empresas/real-betis.png" alt="" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="projects-head">
+          <div class="projects-copy">
+            <span class="eyebrow">Proyectos destacados</span>
+            <h2>Historias que diseñé, pensé y construí.</h2>
+          </div>
+          <a class="projects-link" href="#">Ver todos los proyectos</a>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card">
+            <div class="card-media">
+              <img src="maison-du-tpv-proyecto.png" alt="Captura del e-commerce La Maison du TPV" />
+            </div>
+            <div class="card-body">
+              <div class="card-index">01</div>
+              <h3>Una transformación completa de producto digital.</h3>
+              <p>Convertí un e-commerce con una interfaz obsoleta en una experiencia moderna, intuitiva y alineada con una identidad de marca mucho más fuerte.</p>
+              <span class="tag">UX/UI · E-commerce · Branding · Front-end</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="presentaciones-producto-mockups.jpg" alt="Galería de presentaciones comerciales con mockups personalizados" />
+            </div>
+            <div class="card-body">
+              <div class="card-index">02</div>
+              <h3>Presentaciones de producto con mockups personalizados para cada cliente.</h3>
+              <p>Diseñé presentaciones comerciales a medida, seleccionando productos y creando mockups realistas para mostrar cómo se integraría la identidad visual del cliente en cada propuesta.</p>
+              <span class="tag">Diseño gráfico · Presentaciones · Mockups · Branding</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="desarrollo-producto-fabricacion.jpg" alt="Ficha técnica de producto lista para fabricación" />
+            </div>
+            <div class="card-body">
+              <div class="card-index">03</div>
+              <h3>Del concepto al producto listo para fabricar.</h3>
+              <p>Desarrollo integral de productos, desde la idea inicial hasta la documentación técnica para producción, incluyendo diseño gráfico, acabados, materiales, especificaciones y control de identidad visual.</p>
+              <span class="tag">Diseño de producto · Packaging · Producción · Dirección de arte</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="optimizacion-procesos-ia.jpg" alt="Flujo de trabajo asistido por IA para documentación técnica" />
+            </div>
+            <div class="card-body">
+              <div class="card-index">04</div>
+              <h3>Optimización de procesos mediante inteligencia artificial.</h3>
+              <p>Desarrollo de flujos de trabajo asistidos por IA para agilizar la creación de documentación técnica, organizar información de producto, traducir contenido, generar fichas técnicas y estandarizar procesos internos.</p>
+              <span class="tag">IA · Automatización · Documentación técnica · Optimización de procesos</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="tools">
+          <span class="eyebrow">Mis herramientas</span>
+          <div class="tool-grid">
+            <div class="tool-card" tabindex="0" aria-label="Photoshop">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <span class="tool-icon photoshop">Ps</span>
+                </div>
+                <div class="tool-face tool-back">Photoshop</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="Illustrator">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <span class="tool-icon illustrator">Ai</span>
+                </div>
+                <div class="tool-face tool-back">Illustrator</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="InDesign">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <span class="tool-icon indesign">Id</span>
+                </div>
+                <div class="tool-face tool-back">InDesign</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="ChatGPT">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <img class="tool-logo" src="chatgpt-logo.png" alt="" />
+                </div>
+                <div class="tool-face tool-back">ChatGPT</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="Claude">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <img class="tool-logo" src="claude-logo.png" alt="" />
+                </div>
+                <div class="tool-face tool-back">Claude</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="Notion">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <img class="tool-logo" src="notion-logo.png" alt="" />
+                </div>
+                <div class="tool-face tool-back">Notion</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="Codex">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <img class="tool-logo" src="codex-logo.webp" alt="" />
+                </div>
+                <div class="tool-face tool-back">Codex</div>
+              </div>
+            </div>
+
+            <div class="tool-card" tabindex="0" aria-label="Canva">
+              <div class="tool-inner">
+                <div class="tool-face tool-front" aria-hidden="true">
+                  <img class="tool-logo wide" src="canva-logo.png" alt="" />
+                </div>
+                <div class="tool-face tool-back">Canva</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="contacto">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <span class="eyebrow">Contacto</span>
+            <h2>¿Crees que podemos <span class="accent">encajar</span>?</h2>
+            <p>
+              Estoy abierta a nuevas oportunidades donde pueda aportar valor a través del
+              diseño, la gestión de producto y la automatización de procesos.
+            </p>
+            <a class="btn btn-primary" href="https://wa.me/34679645956" target="_blank" rel="noopener noreferrer">Contactar</a>
+          </div>
+
+          <aside class="contact-card">
+            <ul class="contact-list">
+              <li><strong>Ubicación:</strong> Sevilla o en remoto</li>
+              <li><strong>Email:</strong> ehciram@gmail.com</li>
+              <li><strong>LinkedIn:</strong> Mariche García González</li>
+            </ul>
+          </aside>
+        </div>
+
+        <footer class="footer">
+          <div class="footer-inner">
+            <span>2026© Mariché García.</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
