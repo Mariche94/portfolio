@@ -35,6 +35,7 @@
     html {
       scroll-behavior: smooth;
       overflow-x: hidden;
+      scroll-padding-top: 104px;
     }
 
     body {
@@ -46,6 +47,7 @@
       color: var(--text);
       line-height: 1.5;
       overflow-x: hidden;
+      padding-top: 82px;
     }
 
     img {
@@ -65,6 +67,7 @@
 
     .section {
       padding: 5rem 0;
+      scroll-margin-top: 104px;
     }
 
     .eyebrow {
@@ -122,8 +125,10 @@
     }
 
     .nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 20;
       backdrop-filter: blur(12px);
       background: rgba(251, 248, 244, 0.82);
@@ -593,6 +598,27 @@
       font-weight: 700;
     }
 
+    .project-status {
+      display: inline-flex;
+      margin-bottom: 0.75rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(235, 125, 47, 0.1);
+      color: #b95f1e;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .card-link {
+      display: inline-flex;
+      margin-top: 0.9rem;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
     .tools {
       padding-top: 2rem;
     }
@@ -836,6 +862,14 @@
     }
 
     @media (max-width: 720px) {
+      html {
+        scroll-padding-top: 214px;
+      }
+
+      body {
+        padding-top: 206px;
+      }
+
       .nav-inner {
         flex-direction: column;
         justify-content: center;
@@ -1074,7 +1108,7 @@
               Algunos de los resultados que he impulsado a través de diseño,
               estrategia, automatización y colaboración transversal.
             </p>
-            <a class="btn btn-secondary" href="#contacto">Ver experiencia completa</a>
+            <a class="btn btn-secondary" href="experiencia.html">Ver experiencia completa</a>
           </div>
 
           <div class="stats">
@@ -1285,7 +1319,7 @@
             <span class="eyebrow">Proyectos destacados</span>
             <h2>Historias que diseñé, pensé y construí.</h2>
           </div>
-          <a class="projects-link" href="#">Ver todos los proyectos</a>
+          <a class="projects-link" href="proyectos.html">Ver todos los proyectos</a>
         </div>
 
         <div class="projects-grid">
@@ -1295,45 +1329,53 @@
             </div>
             <div class="card-body">
               <div class="card-index">01</div>
+              <span class="project-status">Caso top · Conversión real</span>
               <h3>Una transformación completa de producto digital.</h3>
               <p>Convertí un e-commerce con una interfaz obsoleta en una experiencia moderna, intuitiva y alineada con una identidad de marca mucho más fuerte.</p>
               <span class="tag">UX/UI · E-commerce · Branding · Front-end</span>
+              <a class="card-link" href="proyectos.html#web">Ver proyecto</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media">
-              <img src="presentaciones-producto-mockups.jpg" alt="Galería de presentaciones comerciales con mockups personalizados" />
+              <img src="proyectos/presentaciones-comerciales.jpg" alt="Selección de presentaciones comerciales con mockups personalizados" />
             </div>
             <div class="card-body">
               <div class="card-index">02</div>
-              <h3>Presentaciones de producto con mockups personalizados para cada cliente.</h3>
-              <p>Diseñé presentaciones comerciales a medida, seleccionando productos y creando mockups realistas para mostrar cómo se integraría la identidad visual del cliente en cada propuesta.</p>
+              <span class="project-status">Día a día · Cierre comercial</span>
+              <h3>Presentaciones comerciales que convierten producto en propuesta.</h3>
+              <p>Selección de productos, mockups ad-hoc y narrativa visual para marcas como Lacasitos, Centro Mail, Jo Malone y Malvón.</p>
               <span class="tag">Diseño gráfico · Presentaciones · Mockups · Branding</span>
+              <a class="card-link" href="proyectos.html#presentaciones">Ver selección</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media">
-              <img src="desarrollo-producto-fabricacion.jpg" alt="Ficha técnica de producto lista para fabricación" />
+              <img src="proyectos/artworks-producto.jpg" alt="Selección de artworks y fichas de producto desarrolladas para fabricación" />
             </div>
             <div class="card-body">
               <div class="card-index">03</div>
-              <h3>Del concepto al producto listo para fabricar.</h3>
-              <p>Desarrollo integral de productos, desde la idea inicial hasta la documentación técnica para producción, incluyendo diseño gráfico, acabados, materiales, especificaciones y control de identidad visual.</p>
+              <span class="project-status">Producto · Arte final</span>
+              <h3>Artworks y productos preparados para producción.</h3>
+              <p>Diseño de piezas, aplicación de marca, selección de color, mockups técnicos y arte final listo para proveedor.</p>
               <span class="tag">Diseño de producto · Packaging · Producción · Dirección de arte</span>
+              <a class="card-link" href="proyectos.html#artworks">Ver selección</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media">
-              <img src="optimizacion-procesos-ia.jpg" alt="Flujo de trabajo asistido por IA para documentación técnica" />
+              <img src="proyectos/packaging-tecnico.jpg" alt="Selección de packagings y troqueles técnicos" />
             </div>
             <div class="card-body">
               <div class="card-index">04</div>
-              <h3>Optimización de procesos mediante inteligencia artificial.</h3>
-              <p>Desarrollo de flujos de trabajo asistidos por IA para agilizar la creación de documentación técnica, organizar información de producto, traducir contenido, generar fichas técnicas y estandarizar procesos internos.</p>
-              <span class="tag">IA · Automatización · Documentación técnica · Optimización de procesos</span>
+              <span class="project-status">Packaging · Proveedor</span>
+              <h3>Packagings, troqueles y documentación técnica visual.</h3>
+              <p>Creación y adaptación de packaging, shipping marks, diecuts y materiales de producción para producto personalizado.</p>
+              <span class="tag">Packaging · Troqueles · Artes finales · Producción</span>
+              <a class="card-link" href="proyectos.html#packaging">Ver selección</a>
             </div>
           </article>
         </div>

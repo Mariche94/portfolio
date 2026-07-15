@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos | Mariché García</title>
+  <meta
+    name="description"
+    content="Selección de proyectos reales de Mariché García: presentaciones comerciales, catálogos, mockups, artworks, packaging y diseño digital."
+  />
+  <style>
+    :root {
+      --bg: #f7f2ec;
+      --text: #181818;
+      --muted: #5f5a55;
+      --line: #e7ddd3;
+      --dark: #111111;
+      --accent: #eb7d2f;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      scroll-padding-top: 104px;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(235, 125, 47, 0.20), transparent 24%),
+        radial-gradient(circle at 95% 65%, rgba(235, 125, 47, 0.12), transparent 22%),
+        linear-gradient(180deg, #fbf8f4 0%, #f6efe8 100%);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      padding-top: 82px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4.75rem 0;
+      scroll-margin-top: 104px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.9rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,0.5);
+    }
+
+    .btn:hover,
+    .project-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(251, 248, 244, 0.82);
+      border-bottom: 1px solid rgba(231, 221, 211, 0.7);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand .dot {
+      color: var(--accent);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .menu a:hover,
+    .menu a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    .page-intro {
+      padding: 4rem 0 2.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    h1,
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      max-width: 860px;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.85rem);
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .quick-nav a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.65rem 0.9rem;
+      background: rgba(255,255,255,0.52);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 1.05rem;
+    }
+
+    .projects-list {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 1.4rem;
+      align-items: stretch;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.66);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      transition: 0.25s ease;
+    }
+
+    .project-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      min-height: 100%;
+    }
+
+    .project-preview.single {
+      grid-template-columns: 1fr;
+    }
+
+    .project-preview.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-preview img {
+      width: 100%;
+      height: 100%;
+      min-height: 210px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: var(--white);
+      border: 1px solid rgba(231, 221, 211, 0.8);
+    }
+
+    .project-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.3rem 0.35rem 0.35rem;
+    }
+
+    .project-index {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-copy h3 {
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-copy p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .facts {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .fact {
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .dark-section {
+      background:
+        radial-gradient(circle at 15% 100%, rgba(235, 125, 47, 0.08), transparent 28%),
+        linear-gradient(180deg, #131313 0%, #0e0e0e 100%);
+      color: var(--white);
+    }
+
+    .dark-section .section-head p,
+    .dark-section .project-copy p,
+    .dark-section .fact span {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .dark-section .project-card {
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .dark-section .fact {
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .dark-section .fact strong {
+      color: var(--white);
+    }
+
+    .dark-section .btn-secondary {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .footer {
+      padding: 1.5rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1080px) {
+      .section-head,
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 214px;
+      }
+
+      body {
+        padding-top: 206px;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.85rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .project-preview,
+      .project-preview.two {
+        grid-template-columns: 1fr;
+      }
+
+      .project-preview img {
+        min-height: auto;
+        aspect-ratio: 16 / 9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html#inicio" class="brand">mariché garcía<span class="dot">.</span></a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="experiencia.html">Experiencia</a></li>
+          <li><a href="index.html#empresas">Empresas</a></li>
+          <li><a href="proyectos.html" aria-current="page">Proyectos</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary" href="index.html#contacto">Hablemos</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro" id="inicio">
+      <div class="container">
+        <a class="back-link" href="index.html#proyectos">← Volver al portfolio</a>
+        <span class="eyebrow">Proyectos</span>
+        <h1>Una selección de trabajos reales, listos para verse.</h1>
+        <p class="lead">
+          Presentaciones comerciales, catálogos, mockups, artworks, packaging y
+          producto digital. Cada proyecto muestra piezas realizadas y, si hace falta
+          más detalle, el PDF completo está a un clic.
+        </p>
+
+        <nav class="quick-nav" aria-label="Categorías de proyectos">
+          <a href="#web">Web</a>
+          <a href="#presentaciones">Presentaciones</a>
+          <a href="#artworks">Artworks y producto</a>
+          <a href="#packaging">Packaging</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="web">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Web</span>
+            <h2>La Maison du TPV: rediseño orientado a confianza y conversión.</h2>
+          </div>
+          <p>
+            Lavado de cara integral de un e-commerce con una estética anticuada que
+            no generaba confianza. Replanteé la interfaz respetando la paleta y
+            tomando referencias visuales del mercado francés.
+          </p>
+        </div>
+
+        <article class="project-card">
+          <div class="project-preview single">
+            <img src="maison-du-tpv-proyecto.png" alt="Captura del e-commerce La Maison du TPV" />
+          </div>
+          <div class="project-copy">
+            <div>
+              <div class="project-index">Proyecto destacado</div>
+              <h3>Rediseño visual de e-commerce</h3>
+              <p>Transformación de interfaz para mejorar percepción, confianza y claridad en un público francés.</p>
+              <div class="facts">
+                <div class="fact">
+                  <strong>Qué hice</strong>
+                  <span>UX/UI, branding, investigación visual, composición y front-end.</span>
+                </div>
+                <div class="fact">
+                  <strong>Resultado</strong>
+                  <span>+3K clicks, +5K visitas en un mes y +30K€ de conversión.</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a class="btn btn-primary" href="https://lamaisondutpv.fr/" target="_blank" rel="noopener noreferrer">Ver web</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="presentaciones">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Presentaciones comerciales</span>
+            <h2>Catálogos y propuestas con mockups ad-hoc.</h2>
+          </div>
+          <p>
+            Presentaciones pensadas para vender una idea: producto seleccionado,
+            aplicación de marca, mockups y composición visual para que la propuesta
+            se entienda rápido.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="proyectos/lacasitos-01.jpg" alt="Propuesta de gomas y producto promocional para Lacasitos" />
+              <img src="proyectos/lacasitos-02.jpg" alt="Estuches y material escolar para Lacasitos" />
+              <img src="proyectos/lacasitos-03.jpg" alt="Mini papelera y lapiceros para Lacasitos" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Presentación 01</div>
+                <h3>Lacasitos · Catálogo de productos</h3>
+                <p>Propuesta visual de producto promocional con aplicaciones de marca sobre papelería, accesorios y formatos infantiles.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Catálogo comercial en PDF</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Selección de producto, mockups personalizados, composición y adaptación gráfica.</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Uso</strong>
+                    <span>Presentación para campaña/propuesta B2B.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://drive.google.com/file/d/1O-4pRNSUQQK7rhJn6P3ki-0lzU2nMHrT/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ver presentación</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="proyectos/centro-mail-01.jpg" alt="Inspiración creativa para presentación Centro Mail" />
+              <img src="proyectos/centro-mail-02.jpg" alt="Mockups de camisetas para Centro Mail" />
+              <img src="proyectos/centro-mail-03.jpg" alt="Tote bags con diseño retro para Centro Mail" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Presentación 02</div>
+                <h3>Centro Mail · Product Catalog 2026</h3>
+                <p>Propuesta de merchandising con una dirección visual retro-gaming, construida para conectar estética, producto y tono de marca.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Catálogo comercial en PDF</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Inspiración visual, mockups textiles, selección de productos y narrativa de catálogo.</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Uso</strong>
+                    <span>Propuesta comercial personalizada.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://drive.google.com/file/d/1xi_Bv_flyLbFRyfP-5raA96TiUEYHm_E/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ver presentación</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="proyectos/jo-malone-01.jpg" alt="Productos personalizados para Jo Malone" />
+              <img src="proyectos/jo-malone-02.jpg" alt="Accesorios tecnológicos para Jo Malone" />
+              <img src="proyectos/jo-malone-03.jpg" alt="Wallet magnético para Jo Malone" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Presentación 03</div>
+                <h3>Jo Malone · Catálogo de productos 2026</h3>
+                <p>Selección de producto premium y aplicación de marca sobre accesorios, cuidando un lenguaje visual limpio y coherente.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Catálogo comercial en PDF</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Curaduría de producto, mockups, composición y adaptación al territorio visual de marca.</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Uso</strong>
+                    <span>Presentación de producto personalizada.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://drive.google.com/file/d/1ZvGfSw-4FDbid-mHsM4nb_rqokUpDCoM/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ver presentación</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview two">
+              <img src="proyectos/malvon-02.jpg" alt="Mockups de bolsa y organizador para Malvón" />
+              <img src="proyectos/malvon-03.jpg" alt="Neceseres personalizados para Malvón" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Presentación 04</div>
+                <h3>Malvón · Catálogo de productos</h3>
+                <p>Propuesta de producto con estética cálida y artesanal, centrada en textiles, bolsas, mochilas y neceseres personalizados.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Catálogo comercial en PDF</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Selección de productos, mockups y adaptación visual al universo de marca.</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Uso</strong>
+                    <span>Propuesta comercial de merchandising.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://drive.google.com/file/d/1HsecMkEhpy8VvQczBAJr9Gd3CwWF1OBA/view?usp=sharing" target="_blank" rel="noopener noreferrer">Ver presentación</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="artworks">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Artworks y producto</span>
+            <h2>Piezas pensadas para pasar de idea a producción.</h2>
+          </div>
+          <p>
+            Aquí el diseño baja a tierra: aplicación de marca, pantones, patrón,
+            especificaciones, mockup y arte final para validar o producir.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          <article class="project-card">
+            <div class="project-preview single">
+              <img src="proyectos/neck-warmer.jpg" alt="Ficha técnica de cuello Unicaja" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Artwork 01</div>
+                <h3>Neck warmer · Ficha y artwork</h3>
+                <p>Mockup de producto con color, logo, detalle técnico y vista final para validación.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Ficha técnica / artwork</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Aplicación de marca, color, preview y preparación visual para proveedor.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview single">
+              <img src="proyectos/saco-semillas.jpg" alt="Artwork de saco de semillas para El Corte Inglés" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Artwork 02</div>
+                <h3>Saco de semillas · Pattern y pantones</h3>
+                <p>Desarrollo de patrón, paleta y visualización del producto aplicado antes de producción.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Artwork de producto</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Diseño gráfico, pattern, pantones y composición de ficha.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview single">
+              <img src="proyectos/organizador-cables.jpg" alt="Artwork de organizador de cables rosa" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Artwork 03</div>
+                <h3>Organizador de cables · Artwork</h3>
+                <p>Aplicación gráfica de producto con vistas, posición de marca y preparación visual de la pieza.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Artwork de producto</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Adaptación gráfica, preparación de arte final y lectura técnica.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview single">
+              <img src="proyectos/parasol.jpg" alt="Diseño de parasol rojo Big Mac" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <div class="project-index">Artwork 04</div>
+                <h3>Parasol · Aplicación gráfica</h3>
+                <p>Diseño aplicado sobre formato de producto, con adaptación de marca, color y lectura visual directa.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Ficha de producto</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Aplicación gráfica, composición y preparación de la visualización.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packaging">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Packaging</span>
+            <h2>Packagings, troqueles y documentación visual.</h2>
+          </div>
+          <p>
+            Piezas preparadas para validación y fabricación: troqueles, caja,
+            instrucciones visuales, información de producto y aplicación de marca.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="proyectos/box-packaging.jpg" alt="Packaging rojo para producto McDonald's" />
+              <img src="proyectos/unicaja-packaging.jpg" alt="Caja verde para cargador Unicaja" />
+              <img src="proyectos/die-diagram.jpg" alt="Troquel de packaging técnico" />
+            </div>
+            <div class="project-copy">
+              <div>
+                <h3>Packagings y diecuts para producción</h3>
+                <p>Diseño y adaptación de packagings con información técnica, marca, troquel y lectura clara para proveedor.</p>
+                <div class="facts">
+                  <div class="fact">
+                    <strong>Formato</strong>
+                    <span>Packaging, shipping marks y die diagram</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Qué hice</strong>
+                    <span>Composición, aplicación de marca, mensajes, troquel y revisión visual.</span>
+                  </div>
+                  <div class="fact">
+                    <strong>Uso</strong>
+                    <span>Validación y producción con proveedor.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>2026© Mariché García.</span>
+    </div>
+  </footer>
+</body>
+</html>
